@@ -5,8 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// Database stuff
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/nodetest1');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var userlist = require('./routes/userlist');
 
 var app = express(),
     swig = require('swig');
@@ -31,8 +37,15 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname + '/public')));
 
+// Make our db accessible to our router
+app.use(function(req, res, next) {
+    req.db = db;
+    next();
+});
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/userlist', userlist);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

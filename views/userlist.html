@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}My Page{% endblock %}
+
+{% block head %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <h1>Userlist</h1>
+
+    {% for user in userlist %}
+    <li><a href="mailto:{{ user.email }}">{{ user.email }}</a></li>
+    {% endfor %}
+
+{% endblock %}
