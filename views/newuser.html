@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}New User Page{% endblock %}
+
+{% block head %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <form id="formAddUser" action="/adduser" name="adduser" method="post">
+        <input id="inputUserName" type="text" placeholder="username" name="username">
+        <input id="inputUserEmail" type="text" placeholder="useremail" name="useremail">
+        <button id="btnSubmit" type="submit">submit</button>
+    </form>
+
+
+{% endblock %}
