@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <title>{% block title %}My Site{% endblock %}</title>
     {% block head %}
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     {% endblock %}
 </head>
 <body>
     {% block content %}{% endblock %}
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/javascripts/global.js"></script>
 </body>
 </html>
