@@ -13,6 +13,8 @@ var db = monk('localhost:27017/nodetest1');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var userlist = require('./routes/userlist');
+var newuser = require('./routes/newuser');
+var adduser = require('./routes/adduser');
 
 var app = express(),
     swig = require('swig');
@@ -46,6 +48,8 @@ app.use(function(req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 app.use('/userlist', userlist);
+app.use('/newuser', newuser);
+app.use('/adduser', adduser);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
