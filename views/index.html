@@ -18,11 +18,11 @@
             <p>
             <strong>Name:</strong> <span id="userInfoName"></span>
             <br />
-            <strong>Name:</strong> <span id="userInfoAge"></span>
+            <strong>Age:</strong> <span id="userInfoAge"></span>
             <br />
-            <strong>Name:</strong> <span id="userInfoGender"></span>
+            <strong>Gender:</strong> <span id="userInfoGender"></span>
             <br />
-            <strong>Name:</strong> <span id="userInfoLocation"></span>
+            <strong>Location:</strong> <span id="userInfoLocation"></span>
             <br />
             </p>
         </div>
@@ -40,5 +40,23 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Add User -->
+        <h2>Add User</h2>
+        <div id="addUser">
+            <fieldset>
+                <input id="inputUserName" type="text" placeholder="Username" />
+                <input id="inputUserEmail" type="text" placeholder="Email" />
+                <br />
+                <input id="inputUserFullName" type="text" placeholder="Full Name" />
+                <input id="inputUserAge" type="text" placeholder="Age" />
+                <br />
+                <input id="inputUserLocation" type="text" placeholder="Location" />
+                <input id="inputUserGender" type="text" placeholder="Gender" />
+                <br />
+                <button id="btnAddUser">Add User</button>
+            </fieldset>
+        </div>
+
     </div>
 {% endblock %}
